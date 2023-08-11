@@ -1,0 +1,73 @@
+/*
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 16px
+
+### Font
+
+- Family: [Roboto](https://fonts.google.com/specimen/Roboto)
+- Weights: 400, 700 */
+
+:root{
+    --clr-p-300: hsl(4, 100%, 67%);
+
+    --clr-n-100: hsl(0, 0%, 100%);
+    --clr-n-200: hsl(231, 7%, 60%);
+
+    --clr-n-400: hsl(235, 18%, 26%);
+    --clr-n-500: hsl(234, 29%, 20%);
+
+    --bd-ft-sz: 16px;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: var(--clr-n-500);
+    margin: 0;
+    padding: 0;
+    background-color: var(--clr-n-400);
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.container{
+    margin: 0 auto;
+    display: flex;
+}
+
+.card{
+    flex-direction: row;
+    justify-content: center;
+    max-width: 65%;
+    border-radius: 2rem;
+    padding: 2rem;
+    background-color: var(--clr-n-100);
+}
+
+.card ul{
+    list-style-image: url("/assets/images/icon-list.svg");
+    text-align: left;
+    list-style-position: inside;
+}
+
+ul li:before{
+    height: 50%;
+}
+
+.card ul li + li{
+    margin: .25rem 0;
+}
+
+.card .submission{
+    flex-direction: column;
+}
