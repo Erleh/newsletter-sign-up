@@ -1,6 +1,11 @@
-import express from 'express';
+const express = require('express');
+const bodyParser = require('body-parser');
 
 let app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -13,7 +18,9 @@ app.get("/", (req, res) => {
 });
 
 app.post("/", (req, res) => {
-    console.log(res);
+    let data = req.body;
+    res.send('Data received: ' + data);
+    console.log(req);
 });
 
 app.listen(port, hostname, () => {
