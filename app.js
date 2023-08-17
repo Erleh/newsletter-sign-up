@@ -19,8 +19,21 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
     let data = req.body;
-    res.send('Data received: ' + data);
-    console.log(req);
+
+    // For the sake of simple javascript validation
+    const validateEmail = (email) => {
+        return String(email)
+            .toLowerCase()
+            .match(/^[a-z]+.*@.*\..{3}/);
+    };
+
+    if (validateEmail(req.body)){
+        console.log("valid");
+    } else {
+        console.log("Error");
+    }
+
+    console.log(req.body);
 });
 
 app.listen(port, hostname, () => {
