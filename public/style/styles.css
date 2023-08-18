@@ -54,10 +54,28 @@ ul{
 .card{
     flex-direction: row;
     justify-content: space-between;
+    background-color: var(--clr-n-100);
+}
+
+.callto{
     width: 57rem;
     border-radius: 2rem;
     padding: 2rem;
-    background-color: var(--clr-n-100);
+}
+
+.subscribed{
+    flex-direction: column;
+    width: 22rem;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.subscribed h1{
+    font-weight: 700;
+}
+
+.subscribed p{
+    font-size: .85rem;
 }
 
 .card ul{
@@ -112,11 +130,19 @@ ul{
     border-radius: 4px;
 }
 
-.submission button{
-    height: 3.5rem;
+button{
     border-radius: .5rem;
     color: var(--clr-n-100);
     background-color: var(--clr-n-500);
+}
+
+.subscribed button{
+    height: 3rem;
+    font-weight: 700;
+}
+
+.submission button{
+    height: 3.5rem;
     font-weight: 700;
 }
 
@@ -136,4 +162,9 @@ ul{
 .content h1{
     font-size: 3rem;
     font-weight: 700;
+}
+
+.subscribed img{
+    max-width: 2.5rem;
+    margin-bottom: 2rem;
 }

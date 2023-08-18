@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const bodyParser = require('body-parser');
 
 let app = express();
@@ -20,15 +21,17 @@ app.get("/", (req, res) => {
 app.post("/", (req, res) => {
     let data = req.body;
 
-    // For the sake of simple javascript validation
+    // For the sake of simple javascript validation -- will definitely not catch all valid emails
+    // would most likely need email confirmation for better validation
     const validateEmail = (email) => {
         return String(email)
             .toLowerCase()
-            .match(/^[a-z]+.*@.*\..{3}/);
+            .match(/(^.*)@(.*)\.([a-z]{3})\b/);
     };
 
-    if (validateEmail(req.body)){
+    if (validateEmail(req.body.email)){
         console.log("valid");
+        res.sendFile(path.join(__dirname, '/public/success.html'));
     } else {
         console.log("Error");
     }
