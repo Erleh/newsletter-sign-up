@@ -136,9 +136,24 @@ button{
     background-color: var(--clr-n-500);
 }
 
-.subscribed button{
-    height: 3rem;
-    font-weight: 700;
+.subscribed a{
+    margin: 1rem 0 1rem 0;
+    text-align: center;
+    text-decoration: none;
+    font-size: .8rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    color: var(--clr-n-100);
+    background-color: var(--clr-n-500);
+}
+
+.subscribed .content{
+    padding: 0;
+    flex-direction: column;
+}
+
+.subscribed .content h1{
+    font-size: 2.5rem;
 }
 
 .submission button{
@@ -147,21 +162,16 @@ button{
 }
 
 .submission button:hover{
-    background-color: var(--clr-n-400);
+    background-color: var(--clr-p-300); 
     transition: background-color .12s ease-out;
 }
 
-.submission button.selected{
-    background-color: var(--clr-p-300); 
-}
-
-.content{
+.callto .content{
     padding: 5rem 3rem 0 2rem;
 }
 
-.content h1{
+.callto .content h1{
     font-size: 3rem;
-    font-weight: 700;
 }
 
 .subscribed img{
