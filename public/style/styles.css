@@ -57,6 +57,14 @@ ul{
     background-color: var(--clr-n-100);
 }
 
+#desktop-img{
+    display: block;
+}
+
+#mobile-img{
+    display: none;
+}
+
 .callto{
     width: 57rem;
     border-radius: 2rem;
@@ -177,4 +185,26 @@ button{
 .subscribed img{
     max-width: 2.5rem;
     margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        margin: 0;
+        background-color: var(--clr-n-100);
+    }
+
+    #desktop-img{
+        display: none;
+    }
+    
+    #mobile-img{
+        display: block;
+    }
+
+    .card.callto{
+        flex-direction: column-reverse;
+        width: 100%;
+        border-radius: 0;
+        padding: 0;
+    }
 }
