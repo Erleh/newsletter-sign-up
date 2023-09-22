@@ -73,9 +73,10 @@ ul{
 
 .subscribed{
     flex-direction: column;
-    width: 22rem;
+    justify-content: space-around;
+    max-width: 25rem;
     border-radius: 2rem;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .subscribed h1{
@@ -91,8 +92,8 @@ ul{
 }
 
 .card ul li{
-    padding-left: 2rem;
-    background-size: contain;
+    padding: .1rem 0 0 2rem;
+    background-size: auto;
     background-image: url("/assets/images/icon-list.svg");
     background-repeat: no-repeat;
     background-position: left center;
@@ -103,6 +104,8 @@ ul{
 }
 
 .card .submission{
+    padding-top: 1rem;
+    font-size: .75rem;
     margin-top: 2rem;
     flex-direction: column;
 }
@@ -112,12 +115,13 @@ ul{
 }
 
 .invalid{
-    color: red;
+    color: rgb(255, 100, 80);
 }
 
-.submission{
-    padding-top: 1rem;
-    font-size: .75rem;
+#email.invalid{
+    color: rgb(255, 100, 80);
+    background-color: rgba(255, 173, 173, 0.521);
+    outline: solid rgb(255, 100, 80) 1px;
 }
 
 .submission .container{
@@ -144,7 +148,7 @@ button{
     background-color: var(--clr-n-500);
 }
 
-.subscribed a{
+.subscribed a {
     margin: 1rem 0 1rem 0;
     text-align: center;
     text-decoration: none;
@@ -155,56 +159,77 @@ button{
     background-color: var(--clr-n-500);
 }
 
-.subscribed .content{
+.subscribed .content {
     padding: 0;
     flex-direction: column;
 }
 
-.subscribed .content h1{
+.subscribed .content h1 {
     font-size: 2.5rem;
 }
 
-.submission button{
+.submission button {
     height: 3.5rem;
     font-weight: 700;
 }
 
-.submission button:hover{
+.submission button:hover {
     background-color: var(--clr-p-300); 
     transition: background-color .12s ease-out;
 }
 
-.callto .content{
+.callto .content {
     padding: 5rem 3rem 0 2rem;
 }
 
-.callto .content h1{
+.callto .content h1 {
     font-size: 3rem;
 }
 
-.subscribed img{
+.subscribed img {
+    overflow: hidden;
     max-width: 2.5rem;
     margin-bottom: 2rem;
 }
 
-@media screen and (max-width:900px){
-    body{
+#user-email {
+    font-weight: bold;
+}
+
+@media screen and (max-width:500px) {
+    body {
         margin: 0;
         background-color: var(--clr-n-100);
     }
 
-    #desktop-img{
+    #desktop-img {
         display: none;
     }
     
-    #mobile-img{
+    #mobile-img {
         display: block;
     }
 
-    .card.callto{
+    .card.callto {
         flex-direction: column-reverse;
-        width: 100%;
+        max-width: 100%;
         border-radius: 0;
         padding: 0;
+    }
+
+    .callto .content {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .callto img {
+        display:none;
+    }
+
+    .card .submission {
+        padding-top: 1rem;
+        font-size: .75rem;
+        margin-top: 0;
+        flex-direction: column;
     }
 }
